@@ -2,8 +2,8 @@ require "open-uri"
 
 puts "Creating Trial Users"
 
-jose = User.new(email: 'jose@hotmail.com', password: '1234567')
-jose.save!
+admin = User.new(email: 'admin@hotmail.com', password: '1234567')
+admin.save!
 
 puts "Creating Trial Shops"
 
@@ -41,7 +41,7 @@ websites = ['https://kollabo.co.jp/', 'http://www.dynac-japan.com/shop/la_bouche
 images.each_with_index do |image, idx|
 
   file = URI.open(image)
-  shop = Shop.new(name: name[idx], address: address[idx], phone_number: phone_numbers[idx], website: websites[idx], user_id: jose)
+  shop = Shop.new(name: name[idx], address: address[idx], phone_number: phone_numbers[idx], website: websites[idx], user: admin)
   shop.photos.attach(io: file, filename: 'shop.jgp', content_type: 'image/jgp')
   shop.save!
 end
