@@ -1,1 +1,47 @@
 // Specific CSS for your home-page
+
+.main-container {
+  position: relative;
+  border: ($line-width * 2) solid $purple;
+  margin: ($margin * 12) ($margin * 12);
+  padding-top: $padding * 14;
+  padding-bottom: $padding * 14;
+  // height: 100vh;
+  border-radius: $border-radius * 16;
+}
+.sub-container{
+  margin-left: $margin * 13;
+  margin-right: $margin * 13;
+  .homepage-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title-header {
+      display: flex;
+      align-items: flex-end;
+    }
+    h2 {
+    font-weight: bold;
+    }
+  }
+  .homepage-container{
+    margin-top: ($margin * 32);
+    h1 {
+      font-weight: bold;
+      font-size: $font-size * 5;
+    }
+    p {
+      margin-top: ($margin * 8);
+      margin-bottom: ($margin * 8);
+      font-size: $font-size * 3;
+    }
+  }
+  .img-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .link {
+    text-decoration: none;
+  }
+}

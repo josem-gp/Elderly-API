@@ -1,0 +1,12 @@
+.button {
+  background: $purple;
+  color: white;
+  padding: $padding ($padding * 1.5);
+  border-radius: 4px;
+}
+
+.button:hover {
+  background: $purple-hover;
+  color: white;
+  text-decoration: none;
+}
