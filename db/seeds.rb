@@ -1,5 +1,11 @@
 require "open-uri"
 
+
+puts "Destroying..."
+
+Shop.destroy_all
+User.destroy_all
+
 puts "Creating Trial Users"
 
 admin = User.new(email: 'admin@hotmail.com', password: '1234567')
@@ -41,7 +47,7 @@ websites = ['https://kollabo.co.jp/', 'http://www.dynac-japan.com/shop/la_bouche
 images.each_with_index do |image, idx|
 
   file = URI.open(image)
-  shop = Shop.new(name: name[idx], address: address[idx], phone_number: phone_numbers[idx], website: websites[idx], user: admin)
+  shop = Shop.new(name: name[idx], address: address[idx], phone_number: phone_numbers[idx], website: websites[idx], images: image,user: admin)
   shop.photos.attach(io: file, filename: 'shop.jgp', content_type: 'image/jgp')
   shop.save!
 end

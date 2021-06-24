@@ -4,4 +4,12 @@ class ShopPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def show?
+    true
+  end
+
+  def update?
+    record.user == user
+  end
 end
