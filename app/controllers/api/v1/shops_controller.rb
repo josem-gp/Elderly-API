@@ -16,6 +16,17 @@ class Api::V1::ShopsController < Api::V1::BaseController
     end
   end
 
+  def create
+    @shop = Shop.new(shop_params)
+    @shop.user = current_user
+    authorize @shop
+    if @shop.save
+      render :show, status: :created
+    else
+      render_error
+    end
+  end
+
   private
 
   def set_shop

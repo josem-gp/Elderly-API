@@ -12,4 +12,8 @@ class ShopPolicy < ApplicationPolicy
   def update?
     record.user == user
   end
+
+  def create?
+    !user.nil?
+  end
 end
